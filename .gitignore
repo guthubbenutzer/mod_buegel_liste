@@ -1,0 +1,10 @@
+# Allgemeines
+*.log
+*.tmp
+*.zip
+.DS_Store
+Thumbs.db
+
+# IDE/Editor
+.vscode/
+.idea/

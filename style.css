@@ -1,0 +1,244 @@
+/* modules/mod_buegel_liste/style.css */
+
+/* Grundsätzliches Reset */
+body {
+  background: #fff;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #000;
+}
+
+/* Sticky-Wrapper oben */
+.sticky-ui-wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  box-shadow: none;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Innerer Container */
+.sticky-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px 16px;
+}
+
+/* Suchleiste */
+.google-searchbar {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #fafafa;
+  color: #000;
+}
+.search-btn {
+  padding: 8px 16px;
+  font-size: 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  color: #000;
+  cursor: pointer;
+  transition: background .1s, border-color .1s;
+}
+.search-btn:hover {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+/* Filter-Buttons (schwarz/weiß) */
+.buegel-filter-outer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.buegel-filter-btn {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .1s;
+}
+.buegel-filter-btn:hover {
+  background: #000;
+}
+
+/* PDF-Buttons (weißer Rahmen) */
+#generate-pdf-btn,
+#ajaxPDFButton {
+  padding: 10px 24px;
+  font-size: 14px;
+  background: #fff;
+  color: #000;
+  border: 1px solid #222;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background .1s, border-color .1s;
+  margin-right: 12px;
+}
+#generate-pdf-btn:hover,
+#ajaxPDFButton:hover {
+  background: #f9f9f9;
+  border-color: #000;
+}
+
+/* Tabelle */
+.buegel-table {
+  width: 100%;
+  /* für dicke Header-Linie muss separate sein */
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: 0 auto 24px;
+}
+.buegel-table th,
+.buegel-table td {
+  padding: 10px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: left;
+  background: #fff;
+  color: #000;
+  font-weight: normal;
+}
+.buegel-table th:first-child,
+.buegel-table td:first-child {
+  padding-left: 24px;
+}
+
+/* Sticky Tabellenkopf mit fester, dicker Linie */
+  .buegel-table thead th {
+  position: sticky;
+  top: var(--sticky-ui-height, 0px);
+  background: #fff;
+  z-index: 900;
+  font-weight: bold;
+  border-bottom: 3px solid #000 !important;
+}
+
+/* Checkbox-Zellen */
+.checkbox-cell {
+  text-align: center;
+  padding: 0 !important;
+  vertical-align: middle;
+}
+
+/* Icon-Header */
+.icon-checkbox-head {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.icon-checkbox-head svg {
+  width: 18px;
+  height: 18px;
+  fill: #000;
+}
+.icon-checkbox-head span {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 800px) {
+  .sticky-inner {
+    padding: 8px 12px;
+  }
+  .search-input {
+    font-size: 13px;
+  }
+  .search-btn,
+  .buegel-filter-btn,
+  #generate-pdf-btn,
+  #ajaxPDFButton {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
+
+/* ------------------------------------------------ */
+/* Overrides gegen Template-/System-CSS für minimal */
+/* ------------------------------------------------ */
+.google-searchbar .search-input,
+.google-searchbar .search-btn,
+.google-searchbar .reset-btn,
+.buegel-filter-outer .buegel-filter-btn,
+#generate-pdf-btn,
+#ajaxPDFButton,
+.buegel-table th,
+.buegel-table td {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  text-indent: 0 !important;
+}
+.google-searchbar .search-input,
+.google-searchbar .search-btn,
+.google-searchbar .reset-btn,
+.buegel-filter-outer .buegel-filter-btn,
+#generate-pdf-btn,
+#ajaxPDFButton {
+  border-radius: 4px !important;
+  background: #fff !important;
+  color: #222 !important;
+  border: 1px solid #999 !important;
+}
+.google-searchbar .search-btn:hover,
+.google-searchbar .reset-btn:hover,
+.buegel-filter-outer .buegel-filter-btn:hover,
+#generate-pdf-btn:hover,
+#ajaxPDFButton:hover {
+  background: #f5f5f5 !important;
+  border-color: #777 !important;
+}
+.google-searchbar .search-input:focus,
+.google-searchbar .search-btn:focus,
+.google-searchbar .reset-btn:focus,
+.buegel-filter-outer .buegel-filter-btn:focus,
+#generate-pdf-btn:focus,
+#ajaxPDFButton:focus {
+  outline: none !important;
+}
+.buegel-table th,
+.buegel-table td {
+  padding-left: 12px !important;
+}
+
+
+/* ---------------------------------- */
+/* Icons + Zahl + Checkbox inline nebeneinander */
+/* ---------------------------------- */
+.buegel-table th.checkbox-cell .icon-checkbox-head {
+  display: flex !important;            /* Zeile aktivieren */
+  align-items: center;                /* Vertikal zentrieren */
+  justify-content: center;            /* Horizontal zentrieren */
+  gap: 6px !important;                /* Abstand zwischen den Items */
+}
+
+.buegel-table th.checkbox-cell .icon-checkbox-head > * {
+  display: inline-block !important;   /* Alle Kinder als inline-block */
+  margin: 0 !important;               /* jegliche Außenabstände löschen */
+  vertical-align: middle !important;  /* vertikal mittig ausrichten */
+}
+
+/* Checkbox selbst auch als inline-block */
+.buegel-table th.checkbox-cell .icon-checkbox-head input[type="checkbox"] {
+  display: inline-block !important;
+  margin: 0 !important;
+  flex-shrink: 0;                     /* nicht schmaler werden */
+}
+
